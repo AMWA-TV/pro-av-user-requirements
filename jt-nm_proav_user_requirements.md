@@ -1,10 +1,11 @@
-#Pro AV User Requirements
-
+# Pro AV User Requirements
+## Introduction
 The following is a list of ProAV user requirements maintained by the Advanced Media Workflow Association (AMWA) on behalf of the Joint Taskforce for Networked Media (JT-NM).
 The purpose of this list is to provide a common set of user requirements that may help guide and coordinate the activities of participating JT-NM organizations as they seek to develop standards and specifications to serve the ProAV marketplace.
 
 If you wish to submit a user requirement please ideally submit a Pull Request.  An alternative way to do this is to raise an Issue in this repository.  Your submission will be reviewed by the JT-NM.
 
+## Requirements from the ProAV community
 **As a desktop computer user,** I need to be able to see the screen of
 my computer clearly. I am often looking at spreadsheets and documents
 with thin lines and small text of varying color. I need to be able to do
@@ -26,6 +27,8 @@ pretty much perfect.
 sampling at 800Mb/s or less with quality that is excellent (very close
 to perfect) with normal desktop content.
 
+***
+
 **As an Esports Gamer,** latency is everything to me. I need my video
 displayed on my monitor very quickly. In fact, I pay extra for equipment
 that reduces mouse and keyboard latency, and even more for anything that
@@ -38,6 +41,8 @@ May need a more ProvAV requirement.
 * **Requirement:** Sub-frame latency must be achievable between source and
 sync.
 
+***
+
 **As a casual user**, I want to plug my cable into a source and into a
 monitor and experience video and audio, as I would if I had used an HDMI
 or DisplayPort cable.
@@ -46,6 +51,8 @@ or DisplayPort cable.
 a RX without the need for a network switch or any kind of complex
 configuration.
 
+***
+
 **As the owner of a Bar,** I need to show the same television channels
 on multiple monitors. Most of the time, this content is HDCP protected
 from my cable provider's set top box.
@@ -53,6 +60,8 @@ from my cable provider's set top box.
 * **Requirement:** Support Multicast display
 
 * **Requirement:** Support Multicast display with HDCP content.
+
+***
 
 **As a User directing live event production including from remote
 studio,** I want to make a professional looking video production using
@@ -65,12 +74,16 @@ without raising suspicion", my costs need to be very low.
 * **Requirement:** Must support working with software-based video
 production tools on modern computer hardware.
 
+***
+
 **As an IT Professional,** I expect to be able to purchase networking
 equipment from my favorite manufacturer, or vendor. I do not want to
 have to buy specialty switches in order to host video on my network.
 
 * **Requirement:** The solution must support using off the shelf network
 switches (COTS) that are widely available and not overly expensive.
+
+***
 
 **As a user deploying a handful of devices,** I expect the solution to
 be simple to deploy and only require a small inexpensive network,
@@ -83,6 +96,8 @@ Network Switch. An IT expert should not be required to perform the
 installation and configuration of IPMX devices, or the network. However,
 configuration of IGMP, DHCP and other widely understood protocols is
 acceptable
+
+***
 
 **As a user**, I expect to be able to configure a few devices in a
 static topology and expect this setup to persist even when devices are
@@ -109,6 +124,8 @@ solution must be able to support the full range IT configurations and
 capabilities, while providing methods for clean and simple
 interoperability.
 
+***
+
 **As a user** **of a purpose built** **or large** **video system**, I
 accept that I may benefit from dedicated servers and equipment for my
 video system, especially when deploying a large number of devices on my
@@ -123,6 +140,8 @@ includes video content, as well as control traffic.
 * **Requirement:** The solution must support control traffic encryption.
 (this is control not media might be out of scope of this VSF group)
 
+***
+
 **As a digital signage integrator,** I need to create a video wall,
 where content is presented synchronously across a matrix of displays.
 
@@ -135,6 +154,8 @@ one device for aggregation. That device must be able to lineup all the
 signals and display them without obvious tearing issues or apparent
 de-synchronization.
 
+***
+
 **As an AV Director** **producing** **a live event**, I'm controlling a
 production that involves multiple cameras capturing a presenter on the
 stage, while I project their magnified image from multiple projectors on
@@ -145,7 +166,10 @@ but synchronization and latency for these sources is less important.
 
 * **Requirement:** Support mixing of synchronous and asynchronous sources.
 
-Requirements we think are outside the scope of the IMPX VSF activity
+***
+
+###  Requirements we think are outside the scope of the IMPX VSF activity but which may be within the scope of AMWA or SMPTE activities
+(Note: comment reflects that the initial requirments came from the VSF group which was anticipating requirements that may be met by work going on in other industry groups.)
 
 **As** **a User,** I need access to computers, both virtualized and
 physical, that are spread throughout my campus. I must be able to switch
@@ -155,6 +179,8 @@ HID device.
 * **Requirement:** Provide mechanism to virtualize HID devices.
 
 * **Requirement:** Support virtualized, software-only sources.
+
+***
 
 **As a** **Pro AV Integrator**, I need to control and support RS232
 devices, which are still popular in the field. With AV over IP, I need
@@ -180,8 +206,10 @@ by the user.
 display and source devices that need controlled have an interoperable
 way to transfer their control protocols over a network.
 
+***
 
 ## From a Broadcaster's point of view
+### The following requirements are from Broadcasters who may be looking to use ProAV equipment as part of their professional video workflows
 
 * The solution must operate on a network infrastructure that is
 affordable, and that can be designed and configured by the same IT
