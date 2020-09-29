@@ -1,4 +1,4 @@
-# Pro AV User Requirements
+# JT-NM Pro AV User Requirements
 ## Introduction
 The following is a list of ProAV user requirements maintained by the Advanced Media Workflow Association (AMWA) on behalf of the Joint Taskforce for Networked Media (JT-NM).
 The purpose of this list is to provide a common set of user requirements that may help guide and coordinate the activities of participating JT-NM organizations as they seek to develop standards and specifications to serve the ProAV marketplace.
