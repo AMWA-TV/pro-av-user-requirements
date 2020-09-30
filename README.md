@@ -1,5 +1,5 @@
 # JT-NM-ProAV-User-Requirements
-The list of use requirments contained in this repository is maintained by the Advanced Media Workflow Association (AMWA) on behalf of the JT-NM, which owns the list.
+The list of user requirments contained in this repository is maintained by the Advanced Media Workflow Association (AMWA) on behalf of the JT-NM, which owns the list.
 
 The purpose of this list is to provide a common set of user requirements that coordinate the activities of JT-NM member organizations as they develop standards and specifications to serve the ProAV marketplace.
 
