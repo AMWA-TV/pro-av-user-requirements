@@ -32,7 +32,7 @@ May need a more ProAV requirement.
 
 * **Requirement:** The solution must support one TX connected directly to a RX without the need for a network switch or any kind of complex configuration.
 
-**
+***
 
 **As the owner of a Bar,** I need to show the same television channels on multiple monitors. Most of the time, this content is HDCP protected from my cable provider's set top box.
 
@@ -92,7 +92,81 @@ May need a more ProAV requirement.
 
 * **Requirement:** Support mixing of synchronous and asynchronous sources.
 
-***
+### Unreliable, Shared, WAN, or WiFi networks and alignment
+
+**As a user visiting a huddle room with my laptop**, I'd like to share my screen with the room's monitor and AV system. I have a normal laptop, which may lack an ethernet port. I expect to be able to discover the AV system from WiFi in this room from my laptop and share my display. I don't expect the experience to rival the direct connection I get with a cable, but I'd like it to be close and to not be distractingly bad.
+
+**As a visitor in a huddle room with a smartphone**, I'd like to share my screen with the room's monitor and AV system. My phone is connected to WiFi and I would expect to see a simple and easy way to connect and view it on the display with reasonable latency and decent quality.
+
+> **Note:** For the above two use cases: *Reasonable latency* means that it's not impossible to carry on a two-way conversation with someone who is using the same or similar technology as me on the other end. *Decent quality* needs to be defined.
+
+**As an IT manager**, I have many users that bring their own devices including laptops, tablets and phones. My user's expectations are that they can connect wirelessly. The trouble is, there are many different ways to do that in the consumer world, but in the Pro AV world, we need to manage account and device access. Our televisions are not signed into someone's Apple or Google account. We need a common, vendor and platform independent standard for streaming content from devices over wireless networks.
+
+At the same time, we do not want this technology to be completely separated from the transport we do over wired networks. We still need wired networks because there are many time where we need lower latency or we need to have mezzanine or even raw quality. We do not want to have totally separated control planes or timing mechanism, even though we understand that streams are not always compatible across profiles.
+
+I need video and audio to be aligned when they come from the same source. For me, I do not expect to be able to synchronize video or audio from multiple sources over WiFi networks or with my wired network.
+
+**As a computer user**, I don't want my network to stop working when someone starts streaming video over WiFi. I also don't want to make the video or audio stutter while I'm using WiFi. I'd like latency to be as low as possible, so that I can use wireless networks in more applications where I would otherwise use wired network technology.
+
+**As an AV system designer or consultant or purchasing agent**, I'm very interested in open standards whenever I can choose them. However, I also need to save money and solve real problems. It would be great if an open standard for AV over IP could be supported by existing cameras and other gear that I own, especially cameras and gateways that already support h264. Ideally, it would be possible to support IPMX through a firmware update.
+
+**As a digital signage system designer for a large transportation project,** I am looking for flexibility. For example, sometimes I care about latency because the signage is triggered by transportation events and having some assurances about when signs must change in response to those events is important. Other times, latency or even reliability does not matter as much as overcoming cabling, environmental, or other infrastructure concerns. In those scenarios, a wireless connection is much better. In all cases, I'd like to use the same control plane API, and for the system to understand which devices can connect to each other.
+
+**I'm an in-store brand manager for a fast food chain,** and I need to support drive through displays. Very often, running a network cable out to these displays is difficult. It would be simplest if we could connect to our outside displays wirelessly, so that we don't have to deal with installing a new network cable to the display. Also, we need relatively low latency, so there is not too much added delay between when the order taker updates the order and when the customer sees it.
+
+**As a video technician recording high school sports,** I follow our teams to away games, including soccer, basketball and football. In these facilities, I do not have access to their network or any cabling infrastructure. Running my own cables is a pain and often I'm very limited as to where I can run them. Ideally, I could arrive on location with a small fly pack that included 3-4 WiFi cameras, which I could use to shoot the game, controlling them with pan-tilt-zoom (PTZ) controls on a panel. Because I'm shooting sports, latency in the transport can be very annoying because the delay makes it difficult to precisely control the camera as the action moves around.
+
+Also, I need the cameras to be somewhat in sync, as I will be switching between two cameras that are recording the same action from different perspectives. Finally, I also have a wired camera that I use, which sits right next to me, along with a couple of microphones that are wired. I need to be able to keep everything in sync with the WiFi cameras, even though this camera typically has much lower latency than my WiFi cameras.
+
+**As a KVM computer user with a 1GbE connection to a switch from my target computer,** I have multiple desktop images and file traffic that shares the connection. I want to stream both desktops over my AV over IP network, but I want to minimize the bandwidth used for transmission so that I can have more room for file and web traffic.
+
+**As a digital signage installer,** I need to stream four 4K feeds over a single 1GbE for an 8K video wall supported by four 4K receivers. Latency is not a concern, if it is less than a few seconds. The quality needs to be very good, but most viewers will be standing a few feet away, so visually perfect video is not a requirement.
+
+**As a manufacturer with existing h264 cameras and gateway devices,** I would like to participate in IPMX. If I could retrofit my devices to be IPMX compliant, then my users could benefit from standards based interoperability much more quickly.
+
+* **Requirement:** There is a profile that works over unstable or other less-than ideal physical transport, including some set of WiFi, 5G, satellite, or other public/shared pipe networks.
+* **Requirement:** There is a profile that works over wireless and nicely interoperates with the rest of the (wired/low-latency) system. Systems can reason about latency for stream re-alignment.
+* **Requirement:** There is a codec that can compress the content as much as is required for the bandwidth constrained network with measurable latency.
+* **Requirement:** There is a codec that can compress the content as much as is required for the bandwidth constrained network, while still retaining reasonable quality and adds no more than X seconds of latency. Reasonable latency means latency low enough that a typical camera operator can operate a PTZ camera during a basketball game.
+* **Requirement:** There is equipment that people can buy or already have that is or can be made compatible with the open standard.
+* **Requirement:** Latency over WiFi can be measured, so that realignment with the rest of the system can be achieved.
+
+### Control
+
+**As a system engineer for a multi-campus organizations** and I am tasked with deploying, configuring and maintaining the equipment in my AV system. I have thousands of pieces of gear from countless manufacturers. I have hundreds of little semi-autonomous systems that use the same network. Some of this equipment uses different transport standards (IPMX, ST 2110, AES67, AVB, some legacy proprietary protocols).
+
+I need to be able to automate/script the deployment of this equipment without having to accommodate every manufacturer's special method for changing settings over a network. A similar need exists for monitoring and logging this equipment. I need to know what equipment I have, the state of that equipment, and a way common to understand what it does and to manipulate it over the network using scripts, control systems and other mechanisms for control.
+
+Finally, if something should go wrong or a device enters into a state that I need to track (a device stops recording, an RX device is no longer receiving video or is dropping packets, device is too hot...) I need to be notified.
+
+* **Requirement** There is a consistent API (same API for every compliant device) for identifying AV equipment on a network. User can discover the manufacturer, serial number, model number, firmware revision and any other identifying information related to the equipment.
+
+* **Requirement** There is a consistent API for configuring devices over a network. The user can understand what the settings are for the device. The meaning of each setting is understandable within the API itself. Settings may be read only or settable by an authorized client.
+* **Requirement** There is a consistent and IT-friendly / familiar method for monitoring the state of compliant AV devices. There should be a method for subscribing (or some similar method) to state changes and alarms.
+* **Requirement** There is a consistent way to control the device, generally. The user can manipulate the state of the device, limited by permissions and device capability, through a consistent network API.
+
+### Out-of-box experience and accessibility
+
+**As a curious professional or amateur or pro-sumer**, I am excited about building media systems with open standards IP. Currently, I use proprietary solutions that are free to download, but that system has limitations and it isn't a true open standard. I'm open to trying something that is an open standard and might have some features that the current options lack. What's the fastest way that I can try out IPMX? Where's the free/open source package that lets me play with it?
+
+I don't expect to do everything for free, but I expect to be able to do some things right away and for free, especially since proprietary options let me do that.
+
+**As a person hosting an event that wants to share content with guests** I need a barrier-free way for my guests to receive my content, without having to pay any kind of licensing fee. My expectation is that while producing great looking content with low-latency should probably cost at least some money, everyone should be able to view the content without paying anything.
+
+* **Requirement:** There is or at least can be (with volunteer help) a baseline, freely available IPMX repo for people to play with and experiment with IPMX, without paying anyone money. It may be limited to some defined profile limit. Example: 4:2:2 HD 8-BIT video.
+
+* **Requirement:** Anyone can watch any produced content without paying a royalty for anything associated with the transport.
+
+### Resolution Scaling
+
+**As a director or network operations center employee,** I use multi-viewers to monitor many inputs at once on a single large display. I don't typically see any one input full screen. I typically need to see 6-12 inputs at the same time, but it might be more. With so many inputs, network bandwidth becomes a concern. Also, when viewing my multi-viewer feeds, the timing is important. If the preview windows are delayed from the real content, it makes it impossible make decisions based on what I can see in the window.
+
+**As a sports venue AV system designer,** I have feeds that originate as 4K flows for my production system, but I also need them to stream to 1080p displays, such as our digital signage system. I would rather not duplicate these flows only to support 1080p.
+
+* **Requirement:** A method for providing multiple resolutions of a single flow, without consuming significantly more bandwidth on the network than the highest resolution flow would have been, by itself.
+* **Requirement:** Each version of the flow is in sync with every other version.
+* **Requirement:** Receiving a lower resolution flow consumes much less bandwidth than receiving the full flow.
+* **Requirement:** A typical use case would be: 4k, 1080p and qHD (1/4 1080p) available on the network.
 
 ## Requirements we think are outside the scope of the IPMX VSF activity but which may be within the scope of AMWA or SMPTE activities
 
