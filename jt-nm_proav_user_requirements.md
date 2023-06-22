@@ -32,7 +32,7 @@ May need a more ProAV requirement.
 
 * **Requirement:** The solution must support one TX connected directly to a RX without the need for a network switch or any kind of complex configuration.
 
-**
+***
 
 **As the owner of a Bar,** I need to show the same television channels on multiple monitors. Most of the time, this content is HDCP protected from my cable provider's set top box.
 
@@ -159,11 +159,14 @@ I don't expect to do everything for free, but I expect to be able to do some thi
 
 ### Resolution Scaling
 
-**As a director or network operations center employee,** I use multi-viewers to many inputs at once on a single large display. I don't typically see any one input full screen. I typically need to see 6-12 inputs at the same time, but it might be more. With so many inputs, network bandwidth becomes a concern.
+**As a director or network operations center employee,** I use multi-viewers to monitor many inputs at once on a single large display. I don't typically see any one input full screen. I typically need to see 6-12 inputs at the same time, but it might be more. With so many inputs, network bandwidth becomes a concern. Also, when viewing my multi-viewer feeds, the timing is important. If the preview windows are delayed from the real content, it makes it impossible make decisions based on what I can see in the window.
 
-**As a sports venue AV system designer,** I have feeds that originate as 4K flows for my production system, but I also need them to stream to 1080p sources, such as our digital signage system. I would rather not duplicate these flows only to support 1080p.
+**As a sports venue AV system designer,** I have feeds that originate as 4K flows for my production system, but I also need them to stream to 1080p displays, such as our digital signage system. I would rather not duplicate these flows only to support 1080p.
 
-* **Requirement:** Support resolution scaling, so that receivers can subscribe to lower or higher resolution versions of the flow without increasing overall traffic compared to only streaming the highest available version of the flow.
+* **Requirement:** A method for providing multiple resolutions of a single flow, without consuming significantly more bandwidth on the network than the highest resolution flow would have been, by itself.
+* **Requirement:** Each version of the flow is in sync with every other version.
+* **Requirement:** Receiving a lower resolution flow consumes much less bandwidth than receiving the full flow.
+* **Requirement:** A typical use case would be: 4k, 1080p and qHD (1/4 1080p) available on the network.
 
 ## Requirements we think are outside the scope of the IPMX VSF activity but which may be within the scope of AMWA or SMPTE activities
 
