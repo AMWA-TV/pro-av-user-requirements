@@ -168,6 +168,25 @@ I don't expect to do everything for free, but I expect to be able to do some thi
 * **Requirement:** Receiving a lower resolution flow consumes much less bandwidth than receiving the full flow.
 * **Requirement:** A typical use case would be: 4k, 1080p and qHD (1/4 1080p) available on the network.
 
+### High Bit Depth for Direct View LED Video Walls
+
+**As an AV Integrator specializing in high-value retail, transportation, and simulation experiences,** I am tasked with deploying visually compelling LED video walls. These walls are composed of multiple LED cabinets (ranging from 10-20 units) that require precise and high-quality video signal distribution.
+
+Key Requirements
+
+* **High Bit Depth:** The system must support very high bit depths, potentially up to 16-20 bits per pixel, to drive the LED tiles effectively. This ensures rich color depth and nuanced visual detail, crucial for high-end applications that employ high-dynamic range LED technology.
+* **Efficient Data Transmission:** Each LED cabinet's video data should be transmitted as a separate video stream.
+
+> **Note:** This approach aligns with the established 4x FHD stream use cases but extends it further in terms of coding efficiency.
+
+* **Network Compatibility:** The solution must utilize existing standard Ethernet network infrastructure, operating within the bandwidth constraints of 1-10G. This compatibility ensures ease of integration into current systems without the need for extensive network upgrades.
+* **Priority on Bandwidth and Cost:** In this scenario, achieving low bandwidth utilization and cost-effectiveness is paramount. These factors take precedence over low latency and visually lossless compression.
+* **Software-Friendly Deployment:** For ease of deployment and maintenance, the solution must be amenable to software-based implementations. This requirement is key for ensuring that the system is flexible, upgradable, and easy to manage.
+
+#### Implications
+
+This use case represents an advanced application of IPMX, targeting scenarios where exceptional, very high-dynamic range visual quality is required, along with efficient use of network resources. It reflects the growing demand for high-fidelity, networked AV solutions in settings where the visual experience is a critical aspect of the overall value proposition.
+
 ## Requirements we think are outside the scope of the IPMX VSF activity but which may be within the scope of AMWA or SMPTE activities
 
 > **Note:** comment reflects that the initial requirements came from the VSF group which was anticipating requirements that may be met by work going on in other industry groups.
